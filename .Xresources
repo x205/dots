@@ -1,0 +1,87 @@
+!---*-# URXVT #-*---!
+!-- ISO/keycap picture insert mode
+URxvt.iso14755:					false
+URxvt.iso14755_52:				false
+
+!-- Cursor
+URxvt.cursorColor:				#ff0000
+URxvt.cursorColor2:				green
+URxvt.cursorBlink:				false
+
+!-- Fonts
+URxvt*font:					    xft:terminus:pixelsize=20, \
+                                xft:Symbola:style=Regular, \
+                                xft:Noto Color Emoji:16, \
+                                xft:Unifont
+
+!URxvt*boldFont:				    -*-terminus-bold-r-*-*-16-*-*-*-*-*-*-*, \
+!URxvt*boldFont:				    9x15bold,xft:terminus:pixelsize=16, \
+!                                xft:Unifont, \
+!                                xft:Symbola:style=Regular, \
+!                                xft:Noto Color Emoji
+!!-- URxvt*italicFont:			    -*-terminus-medium-o-*-*-16-*-*-*-*-*-*-*, \
+!URxvt*italicFont:			    xft:italic:pixelsize=16, \
+!                                xft:Unifont, \
+!                                xft:Symbola:style=Regular, \
+!                                xft:Noto Color Emoji
+!!-- URxvt.boldItalicFont:		    -*-terminus-bold-o-*-*-16-*-*-*-*-*-*-*, \
+!URxvt.boldItalicFont:		    xft:Unifont, \
+!                                xft:Symbola:style=Regular, \
+!                                xft:Noto Color Emoji
+
+!-- Other stuff, like shift+up to move up/scroll scrolling with shift
+!URxvt.transparent:			    true
+!URxvt.shading:			        20
+URxvt.keysym.Ctrl-5: 		    perl:url-select:select_next
+URxvt.visualBell: 		        true
+URxvt.keysym.Shift-Up: 		    command:\033]720;1\007
+URxvt.keysym.Shift-Down: 	    command:\033]721;1\007
+URxvt.fading:				    15
+URxvt*pointerColor:			    #00ff00
+URxvt*loginShell:			    true
+
+!-- test green switch colors
+URxvt.color7:                   grey90
+URxvt.color12:		            RoyalBlue
+!URxvt.foreground: 	            white
+URxvt.foreground: 	            grey90
+URxvt.background:	            #000000
+
+
+!-- Scrolling
+!URxvt.scrollTtyOutput:			false
+URxvt.scrollWithBuffer:			false
+URxvt.scrollTtyKeypress:		true
+URxvt.secondaryScroll:			true
+URxvt.scrollstyle:				plain
+URxvt.saveLines:				20000
+URxvt.scrollBar_right:			true
+URxvt.scrollBar:				false
+URxvt*thickness:				1
+
+
+!-- Perl Extensions, plugins 
+!- Clipboard
+URxvt.clipboard.autocopy:     	true
+URxvt.keysym.Shift-Control-V:	eval:paste_clipboard
+URxvt.keysym.Shift-Control-C:	eval:selection_to_clipboard
+
+URxvt.perl-ext-common: 			default,matcher,eval,selection-to-clipboard,confirm-paste,vim-scrollback
+URxvt.keysym.C-1:				eval:scroll_to_top
+
+URxvt.url-launcher:       		sensible-browser
+URxvt.keysym.C-3:    			matcher:list
+URxvt.matcher.button:     		Ctrl-1
+URxvt.matcher.pattern.1:  		\\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+
+!-- URxvt.matcher.rend.0:			Uline bold fg16
+URxvt.matcher.rend.0:			Uline fg16
+
+
+!-- vim-scrollback config
+URxvt.vim-scrollback: 			C-m
+URxvt.vim-scrollback-bg:	29
+URxvt.vim-scrollback-fg:		1
+
+
+*customization: -color
