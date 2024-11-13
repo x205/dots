@@ -1,0 +1,12 @@
+$include /etc/inputrc
+set editing-mode vi
+set show-mode-in-prompt
+set enable-bracketed-paste on
+$if mode=vi
+	" ":magic-space
+	"jk":"\e"
+$endif
+$if mode=vi-command
+	"j":"history-substring-search-forward"
+	"k":"history-substring-search-backward"
+$endif
