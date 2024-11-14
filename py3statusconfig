@@ -1,0 +1,87 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        colors = true
+        interval = 5
+}
+
+order += "scratchpad"
+order += "wireless _first_"
+order += "ethernet _first_"
+order += "volume_status speakers"
+order += "volume_status mic"
+#order += "backlight"
+order += "battery all"
+order += "disk /"
+order += "load"
+order += "memory"
+order += "tztime local"
+
+
+volume_status speakers {
+	command = "pactl"
+	format = '♪ {percentage}%'
+	format_muted = '{percentage}%'
+	thresholds = [(20, 'bad'), (50, 'degraded'), (80, 'good')]
+	max_volume = 100
+}
+
+volume_status mic {
+    format = 'mic {percentage}%'
+    format_muted = '{percentage}%'
+	is_input = true
+	#thresholds = [(0, 'bad'), (10, 'degraded'), (20, 'good')]
+}
+
+backlight {
+	#device = "intel_backlight"
+	#device = "amdgpu_bl0"
+	#format = "{level}%"
+	#color = "#dd00dd"
+}
+
+scratchpad {
+    thresholds = [
+       (0, "darkgray"), (1, "violet"), (2, "deepskyblue"), (3, "lime"),
+       (4, "yellow"), (5, "orange"), (6, "red"), (7, "tomato"),
+    ]
+}
+
+wireless _first_ {
+        format_up = "W: (%quality at %essid) %ip"
+        format_down = "W: down"
+}
+
+ethernet _first_ {
+        format_up = "E: %ip (%speed)"
+        format_down = "E: down"
+}
+
+battery all {
+        format = "%status %percentage %remaining"
+}
+
+disk "/" {
+        format = "%avail"
+}
+
+load {
+        format = "%1min"
+}
+
+memory {
+        format = "%used / %available"
+        threshold_degraded = "1G"
+        format_degraded = "MEMORY < %available"
+}
+
+tztime local {
+        format = "%a %D %H:%M:%S"
+        color = "#00ff00"
+}
