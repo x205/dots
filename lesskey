@@ -1,0 +1,26 @@
+#command
+# Move to the next file with the left and right arrow keys.
+# Defaults are:
+# :n next-file
+# :p prev-file
+\kr         next-file
+\kl         prev-file
+# Inspiration: http://linuxgazette.net/174/grebler.html
+
+# Make spacebar, f-key, and Page Down scroll a full screenful,
+# even if it reaches end-of-file in the process.
+# PageDown
+f           forw-screen-force
+# Spacebar (40 in octal)
+\40         forw-screen-force
+# PageDown
+\kD         forw-screen-force
+
+#env
+# Make lesss use case-insensitive search by default (-i)
+# and display color (-R).
+LESS = -i -R
+# Source: https://ascending.wordpress.com/2011/02/11/unix-tip-make-less-more-friendly/
+
+# Turn off command and search history.
+LESSHISTFILE = -
