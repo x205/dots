@@ -1,0 +1,54 @@
+import = ["/home/user/.config/alacritty/hyper.toml"]
+working_directory = "None"
+
+[colors.primary]
+background = "#000000"
+foreground = "#ffffff"
+
+[font]
+size = 11.0
+
+[font.bold]
+family = "Terminus"
+style = "Bold"
+
+[font.bold_italic]
+family = "Terminus"
+style = "BoldOblique"
+
+[font.italic]
+family = "Terminus"
+style = "Oblique"
+
+[font.normal]
+family = "Terminus"
+style = "Medium"
+
+[[keyboard.bindings]]
+action = "ToggleViMode"
+key = "M"
+mode = "~Search"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "Last"
+key = 5
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "FirstOccupied"
+key = 7
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "Bracket"
+key = 6
+mode = "Vi|~Search"
+mods = "Shift"
+
+[[keyboard.bindings]]
+action = "PasteSelection"
+key = "O"
+mods = "Control|Shift"
